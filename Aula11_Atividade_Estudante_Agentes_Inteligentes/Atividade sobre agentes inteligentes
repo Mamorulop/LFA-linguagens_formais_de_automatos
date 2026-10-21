@@ -1,1 +1,144 @@
 
+Etapa 2 – Exercício 2.3
+
+A. FALSO
+Justificativa: a racionalidade depende só da sequência de percepções até o momento e maximiza o desempenho esperado, não o real
+Contraexemplo: o aspirador da só percebe a sujeira do quadrado atual (parcialmente observável e, no cenário-base, é racional.
+B. VERDADEIRO
+Justificativa: um agente reativo simples decide só pela percepção atual  e, em ambientes parcialmente observáveis, entra em laços infinitos. A aleatoriedade ajuda, mas em agente único em geral não é racional, e agentes com estado fazem melhor.
+Exemplo: aspirador sem sensor de posição, só com Sujo e Limpo. Diante de Limpo, Esquerda falha sempre em A e Direita falha sempre em B.
+C. VERDADEIRO
+Justificativa: agente racional maximiza o desempenho esperado. Se todas as ações rendem o mesmo, nenhuma é melhor que outra.
+Exemplo: mundo com um único quadrado sempre limpo e sem penalidade por movimento. Todo agente obtém 1.000 pontos.
+D. FALSO
+Justificativa: a função do agente recebe a sequência completa de percepções, e o programa recebe só a percepção atual. Se precisar do histórico, o programa tem de memorizá-lo.
+E. FALSO
+Justificativa: a função é uma descrição matemática abstrata, e a tabela correspondente pode ser enorme ou infinita. Nenhuma máquina física a armazena.
+Contraexemplo: a tabela do xadrez teria pelo menos 10^150 entradas, e o universo tem menos de 10^80 átomos. A do táxi teria mais de 10^250.000.000.000 entradas para uma hora de direção.
+F. VERDADEIRO
+Justificativa: escolher ao acaso é racional quando todas as ações são igualmente boas. Em geral, em agente único, a aleatoriedade não é racional, mas aqui é um caso particular.
+Exemplo: o ambiente determinístico do item (c). Com penalidade por movimento, o agente aleatório deixaria de ser racional.
+G. VERDADEIRO
+Justificativa: basta um caso. Além disso, o aprendizado permite um único agente racional em ampla variedade de ambientes.
+Exemplo: o aspirador  é racional com vida de 1.000 passos e continua racional com 2.000, pois a melhor ação por percepção é a mesma.
+H. FALSO
+Justificativa: ambiente inobservável é aquele em que o agente não tem sensores. Isso não torna toda ação igualmente boa, e os objetivos ainda podem ser alcançáveis .
+Contraexemplo: aspirador sem sensores a sequência Aspirar, Direita, Aspirar limpa os dois quadrados. Ficar parado deixa a sujeira, então não é racional.
+I. FALSO
+Justificativa: racionalidade maximiza o desempenho esperado, e perfeição maximiza o real. O pôquer é parcialmente observável, multiagente e estocástico, então azar pode causar derrota. Basta uma derrota para refutar “nunca”.
+Contraexemplo: o agente aposta com um par de ases, que é a melhor ação com a informação que tem, e perde para uma trinca que o adversário tirou por sorte.
+
+
+Etapa 3 – Exercício 2.4
+
+1. Jogar futebol
+Agente e hipóteses: um jogador robô atacante em partida oficial, com regras conhecidas. O objetivo é ajudar a equipe a vencer.
+P: gols a favor menos gols contra, vitória, poucas faltas.
+E: campo, bola, companheiros, adversários, árbitro, clima.
+A: pernas e pés (correr, passar, chutar), tronco, comunicação por voz ou rádio.
+S: câmeras, audição, equilíbrio (acelerômetro), contato.
+•	Observabilidade: parcialmente observável. Não vê o campo todo nem as intenções dos outros.
+•	Número de agentes: multiagente, cooperativo (equipe) e competitivo (adversários).
+•	Previsibilidade: estocástico. Adversários e bola são imprevisíveis.
+•	Dependência: sequencial. Cada jogada afeta as seguintes.
+•	Mudança: dinâmico. O jogo continua enquanto ele decide.
+•	Natureza: contínuo. Posição, velocidade, tempo e ações variam continuamente.
+•	Conhecimento: conhecido. As regras e a física são conhecidas, mesmo sem ver tudo.
+2. Explorar os oceanos subterrâneos de Titã (hipotético)
+Agente e hipóteses: sonda submarina autônoma, que desce por uma fenda no gelo. A comunicação com a Terra é lenta, então ela precisa de autonomia.
+P: dados coletados, área mapeada, indícios químicos ou biológicos, sobrevivência da sonda.
+E: oceano sob o gelo, pressão e temperatura extremas, correntes, relevo e fendas.
+A: propulsores, lemes, braço coletor, antena.
+S: sonar, câmeras, sensores de pressão, temperatura, química e inerciais.
+•	Observabilidade: parcialmente observável. Sonar e câmeras têm alcance limitado.
+•	Número de agentes: agente único, pela hipótese de que não há outros agentes.
+•	Previsibilidade: estocástico. Há correntes e falhas imprevistas.
+•	Dependência: sequencial. O caminho e a energia gasta limitam o que vem depois.
+•	Mudança: dinâmico. O ambiente muda enquanto a sonda decide.
+•	Natureza: contínuo.
+•	Conhecimento: desconhecido. Ninguém sabe como o ambiente se comporta, então a sonda precisa aprender.
+3. Comprar livros usados de IA na Internet
+Agente e hipóteses: softbot comprador, com orçamento e lista de títulos, em vários sites.
+P: livros certos, menor preço total (com frete), boa condição, sem fraude.
+E: sites de venda, vendedores, outros compradores, sistema de pagamento.
+A: buscar, preencher formulários, pedir e pagar, enviar mensagens a vendedores.
+S: páginas web, e-mails e confirmações, retorno do pagamento (entradas e saídas digitais).
+•	Observabilidade: parcialmente observável. A condição real do livro, o estoque e a confiabilidade do vendedor ficam ocultos.
+•	Número de agentes: multiagente, competitivo com outros compradores e parcialmente cooperativo com vendedores.
+•	Previsibilidade: estocástico. Preço e estoque mudam, e a rede falha.
+•	Dependência: sequencial. Cada compra reduz o orçamento.
+•	Mudança: dinâmico. Um livro pode ser vendido enquanto o agente decide.
+•	Natureza: discreto.
+•	Conhecimento: conhecido. As regras de compra são conhecidas, embora as ofertas não sejam totalmente vistas.
+4. Jogar uma partida de tênis
+Agente e hipóteses: jogador de simples (robô) contra um adversário, em quadra regulamentar.
+P: ganhar pontos, games e sets, com poucos erros.
+E: quadra, rede, bola, adversário, árbitro, vento.
+A: pernas, braço e raquete, saque.
+S: câmeras, sensores de movimento e de posição na quadra.
+•	Observabilidade: parcialmente observável. A intenção do adversário e o efeito da bola não são vistos.
+•	Número de agentes: multiagente competitivo.
+•	Previsibilidade: estocástico. O adversário é imprevisível. Variar o saque ao acaso pode ser racional.
+•	Dependência: sequencial. O placar acumula.
+•	Mudança: dinâmico. A bola está em movimento.
+•	Natureza: contínuo.
+•	Conhecimento: conhecido.
+5. Praticar tênis contra uma parede
+Agente e hipóteses: o mesmo jogador, sozinho. A parede é tratada como objeto, pois só obedece à física.
+P: devoluções seguidas e precisão do golpe.
+E: parede, solo, bola, vento.
+A e S: iguais aos do caso 4.
+•	Observabilidade: parcialmente observável. O efeito da bola é difícil de perceber.
+•	Número de agentes: agente único. A parede não busca maximizar nada.
+•	Previsibilidade: estocástico, com pouca incerteza. Há rebotes irregulares e vento.
+•	Dependência: sequencial. Cada devolução prepara a próxima.
+•	Mudança: dinâmico.
+•	Natureza: contínuo.
+•	Conhecimento: conhecido.
+6. Realizar um salto de altura
+Agente e hipóteses: atleta (robô) em uma tentativa, com regras de competição.
+P: altura superada, poucas tentativas, sem lesão.
+E: pista, sarrafo, colchão, juízes, vento.
+A: pernas (corrida e impulsão), tronco, braços.
+S: visão, equilíbrio, contato com o solo, posição das articulações.
+•	Observabilidade: completamente observável, na prática. Ele vê o sarrafo e o próprio corpo, e só o vento escapa.
+•	Número de agentes: agente único.
+•	Previsibilidade: estocástico, com pouca incerteza.
+•	Dependência: sequencial. As tentativas se ligam por cansaço e estratégia, embora um salto isolado fosse episódico.
+•	Mudança: dinâmico. O corpo se move durante a ação.
+•	Natureza: contínuo.
+•	Conhecimento: conhecido.
+7. Participar de um leilão, realizando lances
+Agente e hipóteses: agente licitante (software) em leilão online de lances crescentes, com valor máximo definido pelo dono.
+P: arrematar pelo menor preço possível sem passar do limite.
+E: plataforma, item, outros licitantes, leiloeiro.
+A: enviar e retirar lances, definir lance máximo automático.
+S: preço atual, histórico de lances, tempo restante, descrição do item (entradas digitais).
+•	Observabilidade: parcialmente observável. Os valores máximos dos rivais são ocultos.
+•	Número de agentes: multiagente competitivo.
+•	Previsibilidade: estocástico. A reação dos rivais é imprevisível.
+•	Dependência: sequencial. Os lances se acumulam e restringem os seguintes.
+•	Mudança: dinâmico. O preço muda e o tempo corre.
+•	Natureza: discreto. Lances e passos de tempo são discretos.
+•	Conhecimento: conhecido. As regras são conhecidas, e o que falta é ver o estado.
+Conclusão
+1.	Partida de tênis e parede: na partida há um adversário (multiagente competitivo), e é preciso pensar em estratégia e imprevisibilidade. Na parede, o agente é único e o ambiente é mais previsível, o que serve para treinar e aprender.
+2.	Informações incompletas na compra de livros: o ambiente é parcialmente observável. O agente precisa de estado interno e estimativas, e deve coletar informação (comparar vendedores, ler avaliações) antes de decidir.
+3.	Outros agentes no futebol e no leilão: no futebol há cooperação (equipe) e competição (adversários), com comunicação e jogadas imprevisíveis. No leilão a relação é só competitiva, com valores ocultos, e os lances de um alteram a decisão dos outros.
+Etapa 4 – Exercício 2.5
+•	Agente: quem percebe o ambiente por sensores e age sobre ele por atuadores. Ex.: um robô aspirador.
+•	Função de agente: relação matemática que liga cada sequência de percepções a uma ação. Ex.: a tabela parcial da Fig. 2.3.
+•	Programa de agente: código que implementa a função, recebendo a percepção atual e devolvendo uma ação. 
+•	Racionalidade: escolher a ação que maximiza o desempenho esperado, dadas a medida, o conhecimento prévio, as ações possíveis e as percepções. Ex.: olhar antes de atravessar a rua.
+•	Autonomia: apoiar-se nas próprias percepções e no aprendizado, não só no conhecimento do projetista. Ex.: aspirador que aprende onde a sujeira aparece mais. O besouro e a vespa Sphex mostram o contrário.
+•	Agente reativo: decide só pela percepção atual, com regras condição-ação. Ex.: se o carro da frente freia, começar a frear.
+•	Agente baseado em modelo: mantém um estado interno e um modelo de como o mundo muda e do efeito de suas ações. Ex.: táxi que lembra onde estão os outros carros ao trocar de pista.
+•	Agente baseado em objetivos: escolhe ações pensando no futuro, para alcançar um objetivo. Ex.: táxi que decide a curva conforme o destino do passageiro.
+•	Agente baseado em utilidade: compara estados por uma utilidade e escolhe a ação de maior utilidade esperada. Ex.: táxi que escolhe a rota mais rápida, segura e econômica.
+•	Agente com aprendizagem: melhora seu desempenho usando crítico, elemento de aprendizado, elemento de desempenho e gerador de problemas. Ex.: táxi que aprende que cortar três faixas é uma ação ruim.
+Síntese com autômatos (caso: leilão)
+•	Estados internos: Observando, Disputando, Desistiu.
+•	Percepções: preço dentro do limite, preço acima do limite, leilão encerrado.
+•	Ações: dar lance, aguardar, retirar-se.
+•	Regra 1: Observando + preço dentro do limite → Disputando e dar lance.
+•	Regra 2: Disputando + preço acima do limite → Desistiu e retirar-se.
